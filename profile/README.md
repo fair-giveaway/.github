@@ -1,6 +1,6 @@
 # Welcome to Fair-Giveaway HQ 🚀
 
-### *Ensuring absolute transparency and trust in online giveaways, powered by modern $0 infrastructure.*
+### *Ensuring absolute transparency and trust in online giveaways, powered by modern high-performance cloud architectures.*
 
 ---
 
@@ -8,7 +8,7 @@
 
 **Fair-Giveaway** is an open-source organization dedicated to building open, provably fair, and auditable utility tools for the community. Our flagship platform, **[fairgiveaway.online](https://fairgiveaway.online)**, solves the trust deficit in social media draws (starting with X/Twitter) by conducting all randomizations strictly client-side using cryptographic standards.
 
-We are proof that world-class, high-performance SaaS platforms can be built entirely on a **Full Zero-Cost ($0) Infrastructure Stack**.
+We focus on delivering high-performance, resilient, and enterprise-grade open-source solutions utilizing modern cloud and edge technologies.
 
 ---
 
@@ -16,12 +16,12 @@ We are proof that world-class, high-performance SaaS platforms can be built enti
 
 We love fast runtimes, modern styling, and scalable edge database architectures. 
 
-| Layer | Technology | Infrastructure Provider | Cost |
-| :--- | :--- | :--- | :--- |
-| **Frontend** | Next.js (App Router), TypeScript, Tailwind CSS v4 | Netlify Free Tier | `$0` |
-| **Backend** | Bun, ElysiaJS, Puppeteer Headless | Hugging Face Spaces (Docker) | `$0` |
-| **Temp Cache** | Upstash Redis (Serverless) | Upstash Free Tier | `$0` |
-| **Permanent DB** | MongoDB Atlas (Shared Cluster) | MongoDB M0 Free Tier | `$0` |
+| Layer | Technology | Infrastructure Provider |
+| :--- | :--- | :--- |
+| **Frontend** | Next.js (App Router), TypeScript, Tailwind CSS v4 | Netlify Cloud |
+| **Backend** | Bun, ElysiaJS, Puppeteer Headless | Hugging Face Spaces (Docker) |
+| **Temp Cache** | Upstash Redis (Serverless) | Upstash Edge |
+| **Permanent DB** | MongoDB Atlas | MongoDB Cloud |
 
 ---
 
@@ -29,7 +29,7 @@ We love fast runtimes, modern styling, and scalable edge database architectures.
 
 Our architecture is fully decoupled and isolated per scope to ensure smooth maintenance and open audatibility:
 
-* **[`fairgiveaway-frontend`](https://github.com/fair-giveaway/fairgiveaway-frontend)**: The beautiful user workstation. Built with Next.js and Tailwind v4, utilizing a premium dark-themed visual language with dynamic, platform-scoped routing (`/x`, `/facebook`, etc.) and instant client-side cryptographic shuffling (`window.crypto.getRandomValues`).
+* **[`fairgiveaway-frontend`](https://github.com/fair-giveaway/fairgiveaway-frontend)**: The beautiful user workstation. Built with Next.js and Tailwind v4, utilizing a premium visual language with dynamic, platform-scoped routing (`/x`, `/facebook`, etc.) and instant client-side cryptographic shuffling (`window.crypto.getRandomValues`).
 * **[`fairgiveaway-backend`](https://github.com/fair-giveaway/fairgiveaway-backend)**: The heavy-lifting engine. Powered by Bun + ElysiaJS to handle high-speed API requests, automated Puppeteer scraping via internal GraphQL streams, and intelligent database bridging.
 
 ---
