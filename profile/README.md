@@ -94,6 +94,20 @@ If FairGiveaway has helped you host a transparent giveaway, consider supporting 
 - **Ko-fi (International)**: [ko-fi.com/isaacnewton1](https://ko-fi.com/isaacnewton1)
 - **GitHub Sponsors**: [github.com/sponsors/isaacnewton123](https://github.com/sponsors/isaacnewton123)
 
+### THANK YOU FOR USING FAIRGIVEAWAY!
+
+If you found this tool helpful for running your giveaway, consider leaving a tip. Your support keeps the platform provably fair and free for everyone!
+
+**EVM Address**
+```text
+0x6e9b40a8fe85e7dcff40cfc9aa526106fe8e0546
+```
+
+**Solana Address**
+```text
+AnBiWNPW68djMF6ERBpueF8tWmcvHr6iCYzriXwGh9k6
+```
+
 ---
 
 <p align="center">
