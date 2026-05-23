@@ -1,66 +1,102 @@
-# Welcome to Fair-Giveaway HQ 🚀
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fair-giveaway/fairgiveaway-frontend/refs/heads/master/public/logo.png" alt="FairGiveaway Logo" width="100" height="100" style="border-radius: 20px;" />
+</p>
 
-### *Ensuring absolute transparency and trust in online giveaways, powered by modern high-performance cloud architectures.*
+<h1 align="center">Fair-Giveaway</h1>
+
+<p align="center">
+  <strong>Provably fair, open-source giveaway winner selection for social media.</strong><br/>
+  <em>Trust Built into the Code.</em>
+</p>
+
+<p align="center">
+  <a href="https://fairgiveaway.online">Website</a> •
+  <a href="https://api.fairgiveaway.online/docs">API Docs</a> •
+  <a href="https://x.com/FairGiveaway">X (Twitter)</a> •
+  <a href="https://github.com/orgs/fair-giveaway/discussions">Discussions</a>
+</p>
 
 ---
 
-## 🔍 About Us
+## About
 
-**Fair-Giveaway** is an open-source organization dedicated to building open, provably fair, and auditable utility tools for the community. Our flagship platform, **[fairgiveaway.online](https://fairgiveaway.online)**, solves the trust deficit in social media draws (starting with X/Twitter) by conducting all randomizations strictly client-side using cryptographic standards.
+**Fair-Giveaway** is an open-source organization building transparent, auditable, and provably fair tools for the online giveaway ecosystem. Our flagship platform, [fairgiveaway.online](https://fairgiveaway.online), eliminates the trust deficit in social media giveaways by conducting all randomization client-side using the Web Crypto API.
 
-We focus on delivering high-performance, resilient, and enterprise-grade open-source solutions utilizing modern cloud and edge technologies.
+Every draw is cryptographically secure, every result is permanently recorded, and every participant list is publicly auditable.
 
 ---
 
-## 🛠️ The Core Stack
+## Architecture
 
-We love fast runtimes, modern styling, and scalable edge database architectures. 
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                         How It Works                             │
+├──────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  1. SCRAPE & CACHE          2. CLIENT SHUFFLE                    │
+│  ┌─────────────────┐       ┌─────────────────┐                  │
+│  │  Tweet URL       │──────▶│  Fisher-Yates   │                  │
+│  │  Puppeteer +     │       │  Shuffle using   │                  │
+│  │  GraphQL Stream  │       │  crypto.getRandom│                  │
+│  │       ▼          │       │  Values()        │                  │
+│  │  Upstash Redis   │       │  (in browser)    │                  │
+│  │  (15 min TTL)    │       └────────┬─────────┘                  │
+│  └─────────────────┘                │                            │
+│                                     ▼                            │
+│                        3. PERMANENT RECORD                       │
+│                        ┌─────────────────┐                       │
+│                        │  MongoDB Atlas   │                       │
+│                        │  Immutable Proof │                       │
+│                        │  Public Audit    │                       │
+│                        └─────────────────┘                       │
+└──────────────────────────────────────────────────────────────────┘
+```
 
-| Layer | Technology | Infrastructure Provider |
+---
+
+## Tech Stack
+
+| Layer | Technology | Provider |
 | :--- | :--- | :--- |
-| **Frontend** | Next.js (App Router), TypeScript, Tailwind CSS v4 | Netlify Cloud |
+| **Frontend** | Next.js (App Router), TypeScript, Tailwind CSS v4 | Netlify |
 | **Backend** | Bun, ElysiaJS, Puppeteer Headless | Hugging Face Spaces (Docker) |
-| **Temp Cache** | Upstash Redis (Serverless) | Upstash Edge |
-| **Permanent DB** | MongoDB Atlas | MongoDB Cloud |
+| **Cache** | Upstash Redis (Serverless) | Upstash |
+| **Database** | MongoDB Atlas | MongoDB Cloud |
+| **Email** | Nodemailer + Zoho Mail SMTP | Zoho |
 
 ---
 
-## 🗂️ Ecosystem Repositories
+## Repositories
 
-Our architecture is fully decoupled and isolated per scope to ensure smooth maintenance and open audatibility:
-
-* **[`fairgiveaway-frontend`](https://github.com/fair-giveaway/fairgiveaway-frontend)**: The beautiful user workstation. Built with Next.js and Tailwind v4, utilizing a premium visual language with dynamic, platform-scoped routing (`/x`, `/facebook`, etc.) and instant client-side cryptographic shuffling (`window.crypto.getRandomValues`).
-* **[`fairgiveaway-backend`](https://github.com/fair-giveaway/fairgiveaway-backend)**: The heavy-lifting engine. Powered by Bun + ElysiaJS to handle high-speed API requests, automated Puppeteer scraping via internal GraphQL streams, and intelligent database bridging.
-
----
-
-## 🔒 Provably Fair Architecture
-
-We believe transparency shouldn't be a black box. Our system architecture enforces strict data integrity:
-1.  **Scrape & Cache**: Participant datasets are safely captured and stored temporarily in **Upstash Redis** with a 15-minute expiration window to handle accidental drop-connections.
-2.  **Client Shuffle**: The actual raffle uses a transparent **Fisher-Yates Shuffle** right inside the holder's browser. No backend manipulation possible.
-3.  **Perpetual Monument**: Once locked, the summary metadata is permanently written to **MongoDB Atlas**, turning the temporary draw session into an unalterable **Immutable Proof Page**.
+| Repository | Description |
+| :--- | :--- |
+| [`fairgiveaway-frontend`](https://github.com/fair-giveaway/fairgiveaway-frontend) | Next.js frontend with premium dark-mode UI, platform-scoped routing, client-side cryptographic shuffling, and public draw verification. |
+| [`fairgiveaway-backend`](https://github.com/fair-giveaway/fairgiveaway-backend) | ElysiaJS API server with Puppeteer scraping, anti-bot verification, session management, and permanent result storage. |
+| [`.github`](https://github.com/fair-giveaway/.github) | Organization profile, community health files, and shared configuration. |
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-We are entirely open-source! We welcome developers, UI/UX designers, and tech enthusiasts to help expand our platform integration (Facebook, Instagram, TikTok, and CSV imports are currently in the pipeline).
+We welcome developers, designers, and community members! Check out the contribution guidelines in each repository, pick an issue, and submit a Pull Request.
 
-Check out our contribution guidelines inside the respective repositories, grab an issue, and submit a Pull Request!
+- 💬 [GitHub Discussions](https://github.com/orgs/fair-giveaway/discussions) — Questions, ideas, and feedback
+- 🐛 [Frontend Issues](https://github.com/fair-giveaway/fairgiveaway-frontend/issues) — UI bugs and feature requests
+- 🐛 [Backend Issues](https://github.com/fair-giveaway/fairgiveaway-backend/issues) — API bugs and feature requests
 
 ---
 
-## 💖 Support the Core Maintainer
+## Support the Project
 
-This project runs entirely on passion and coffee. If our platform helped you host a transparent giveaway or saved your business subscription costs, consider buying us a coffee or becoming a sponsor:
+If FairGiveaway has helped you host a transparent giveaway, consider supporting the maintainer:
 
-* **Trakteer (Local IDR)**: [trakteer.id/isaacnewton1/link](https://trakteer.id/isaacnewton1/link)
-* **Ko-fi (International)**: [ko-fi.com/isaacnewton1](https://ko-fi.com/isaacnewton1)
-* **GitHub Sponsors**: [github.com/sponsors/isaacnewton123](https://github.com/sponsors/isaacnewton123)
+- **Trakteer (IDR)**: [trakteer.id/isaacnewton1/link](https://trakteer.id/isaacnewton1/link)
+- **Ko-fi (International)**: [ko-fi.com/isaacnewton1](https://ko-fi.com/isaacnewton1)
+- **GitHub Sponsors**: [github.com/sponsors/isaacnewton123](https://github.com/sponsors/isaacnewton123)
 
 ---
 
 <p align="center">
-  Licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>. Made with ⚡ and ☕ by the Fair-Giveaway community.
+  Licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.<br/>
+  Made with ⚡ and ☕ by the Fair-Giveaway community.
 </p>
