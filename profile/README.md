@@ -56,23 +56,23 @@ Every draw is cryptographically secure, every result is permanently recorded, an
 
 ## Tech Stack
 
-| Layer | Technology | Provider |
-| :--- | :--- | :--- |
-| **Frontend** | Next.js (App Router), TypeScript, Tailwind CSS v4 | Netlify |
-| **Backend** | Bun, ElysiaJS, Puppeteer Headless | Hugging Face Spaces (Docker) |
-| **Cache** | Upstash Redis (Serverless) | Upstash |
-| **Database** | MongoDB Atlas | MongoDB Cloud |
-| **Email** | Nodemailer + Zoho Mail SMTP | Zoho |
+| Layer        | Technology                                        | Provider      |
+| :----------- | :------------------------------------------------ | :------------ |
+| **Frontend** | Next.js (App Router), TypeScript, Tailwind CSS v4 | Netlify       |
+| **Backend**  | Bun, ElysiaJS, Puppeteer Headless                 | VPS (Docker)  |
+| **Cache**    | Upstash Redis (Serverless)                        | Upstash       |
+| **Database** | MongoDB Atlas                                     | MongoDB Cloud |
+| **Email**    | Nodemailer + Zoho Mail SMTP                       | Zoho          |
 
 ---
 
 ## Repositories
 
-| Repository | Description |
-| :--- | :--- |
+| Repository                                                                        | Description                                                                                                                             |
+| :-------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
 | [`fairgiveaway-frontend`](https://github.com/fair-giveaway/fairgiveaway-frontend) | Next.js frontend with premium dark-mode UI, platform-scoped routing, client-side cryptographic shuffling, and public draw verification. |
-| [`fairgiveaway-backend`](https://github.com/fair-giveaway/fairgiveaway-backend) | ElysiaJS API server with Puppeteer scraping, anti-bot verification, session management, and permanent result storage. |
-| [`.github`](https://github.com/fair-giveaway/.github) | Organization profile, community health files, and shared configuration. |
+| [`fairgiveaway-backend`](https://github.com/fair-giveaway/fairgiveaway-backend)   | ElysiaJS API server with Puppeteer scraping, anti-bot verification, session management, and permanent result storage.                   |
+| [`.github`](https://github.com/fair-giveaway/.github)                             | Organization profile, community health files, and shared configuration.                                                                 |
 
 ---
 
